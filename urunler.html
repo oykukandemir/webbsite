@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürünler</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5571ab349c.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/5571ab349c.js" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <section class="header">
+        <div class="topbarbox">1000 TL ve üzeri ücretsiz kargo!</div>
+        <nav>
+            <a href="#" class="logo" ><img src="logo5.png" alt="logo"></a>
+            <div class="nav-links" id="navList">
+                <i class="fa-solid fa-xmark" onclick="hide()"></i>
+                <ul>
+                    <li><a href="index.html"  >ANASAYFA</a></li>
+                    <li><a href="hakkımızda.html"  >HAKKIMIZDA</a></li>
+                    <li><a href="urunler.html"  >ÜRÜNLER</a></li>
+                    <li><a href="blog.html"  >BLOG</a></li>
+                    <li><a href="iletisim.html"  >İLETİŞİM</a></li>
+                    <li><div class="cart-icon" onclick="goToCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="item-count">0</span>
+                        <div class="shopping-cart-list bg-success d-none">
+                            <b class="fs-5 text-white my-3">Shopping Cart</b>
+                          </div>
+
+                    </div></li>
+                </ul>
+
+            </div>
+            <i class="fa-solid fa-bars" onclick="show()"></i>
+        </nav>
+
+    <section class="product-details">
+    <div class="product-card">
+        <img src="urun6.jpg" alt="Ürün Resmi">
+        <div class="product-info">
+            <h2>Doğal Sızma Zeytinyağı</h2>
+            <p>5 L Doğal Sızma Zeytinyağı</p>
+            <p class="price">Fiyat: 2500 TL</p>
+            <button class="add-to-cart-btn" onclick="addToCart(1)">Sepete Ekle</button>
+
+
+        </div>
+    </div>
+    </section>
+        <script>
+            
+const products = [
+    {
+        id: 1,
+        name: "Doğal Sızma Zeytinyağı",
+        description: "2 L Doğal Sızma Zeytinyağı",
+        price: 1000 ,
+        image: "urun1.jpg"
+    },
+    {
+        id: 2,
+        name: "Doğal Sızma Zeytinyağı",
+        description: "500 ml Doğal Sızma Zeytinyağı",
+        price: 250 ,
+        image: "urun2.jpg"
+    },
+    {
+        id: 3,
+        name: "Doğal Sızma Zeytinyağı",
+        description: "250 ml Doğal Sızma Zeytinyağı",
+        price: 125 ,
+        image: "urun3.jpg"
+    },
+    {
+        id: 4,
+        name: "Soğuk Sıkım Erken Hasat Zeytinyağı",
+        description: "250 ml Soğuk Sıkım Erken Hasat Zeytinyağı",
+        price: 200 ,
+        image: "urun4.jpg"
+    },
+    {
+        id: 5,
+        name: "Nane ve Fesleğen Aromalı Zeytinyağı",
+        description: "250 ml Nane ve Fesleğen Aromalı Zeytinyağı",
+        price: 150 ,
+        image: "urun5.jpg"
+    },
+    {
+        id: 6,
+        name: "Acı Biber Aromalı Zeytinyağı",
+        description: "250 ml Acı Biber Aromalı Zeytinyağı",
+        price: 150 ,
+        image: "urun7.jpg"
+    },
+    {
+        id: 7,
+        name: "Kekik Aromalı Zeytinyağı",
+        description: "250 ml Kekik Aromalı Zeytinyağı",
+        price: 150,
+        image: "urun8.jpg"
+    },
+    {
+        id: 8,
+        name: "Tarçın Aromalı Zeytinyağı",
+        description: "250 ml Tarçın Aromalı Zeytinyağı",
+        price: 150 ,
+        image: "urun9.jpg"
+    },
+    {
+        id: 9,
+        name: "Sarımsak Aromalı Zeytinyağı",
+        description: "250 ml Sarımsak Aromalı Zeytinyağı",
+        price: 150 ,
+        image: "urun10.jpg"
+    },
+    {
+        id: 10,
+        name: "Biberiye Aromalı Zeytinyağı",
+        description: "250 ml Biberiye Aromalı Zeytinyağı",
+        price: 150 ,
+        image: "urun11.jpg"
+    },
+    {
+        id: 11,
+        name: "Limon Aromalı Zeytinyağı",
+        description: "250 ml Limon Aromalı Zeytinyağı",
+        price: 150 ,
+        image: "urun12.jpg"
+    },
+    
+]
+class Shopping {
+            constructor(title, price, image) {
+                this.image = image;
+                this.title = title;
+                this.price = price;
+            }
+        }
+
+        class UI {
+            addToCart(product) {
+                const cartItems = document.querySelector(".shopping-cart-list");
+                const listItem = document.createElement("div");
+                listItem.classList.add("list-item");
+
+                listItem.innerHTML = `
+                    <div class="row align-items-center text-white-50">
+                        <div class="col">
+                            <img src="${product.image}" alt="product" class="img-fluid">
+                        </div>
+                        <div class="col">
+                            <div class="title">${product.name}</div>
+                        </div>
+                        <div class="col">
+                            <div class="price">${product.price}</div>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-delete">
+                                <i class="fas fa-trash-alt text-danger"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                cartItems.appendChild(listItem);
+            }
+            
+            removeCartItem() {
+                const deleteButtons = document.querySelectorAll(".btn-delete");
+                deleteButtons.forEach(button => {
+                    button.addEventListener("click", function() {
+                        this.parentElement.parentElement.remove();
+                        ui.updateCartCount();
+                    });
+                });
+            }
+
+
+
+            updateCartCount() {
+                const itemCount = document.querySelectorAll(".list-item").length;
+                document.getElementById("item-count").textContent = itemCount;
+            }
+
+            toggleCart() {
+                const cartIcon = document.querySelector(".cart-icon");
+                const cartItems = document.querySelector(".shopping-cart-list");
+                cartIcon.addEventListener("click", function() {
+                    cartItems.classList.toggle("d-none");
+                });
+            }
+        }
+        function goToCart() {
+    
+}
+
+
+        const ui = new UI();
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const productContainer = document.querySelector(".product-details");
+            products.forEach(product => {
+                const productCard = document.createElement("div");
+                productCard.classList.add("product-card");
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="Ürün Resmi">
+                    <div class="product-info">
+                        <h2>${product.name}</h2>
+                        <p>${product.description}</p>
+                        <p class="price">Fiyat: ${product.price} TL</p>
+                        <button class="add-to-cart-btn" onclick="addToCart(${product.id})">Sepete Ekle</button>
+                    </div>
+                `;
+                productContainer.appendChild(productCard);
+            });
+
+            ui.toggleCart();
+        });
+
+        function addToCart(id) {
+            const product = products.find(product => product.id === id);
+            if (product) {
+                ui.addToCart(product);
+                ui.updateCartCount();
+                ui.removeCartItem();
+            }
+        }
+// function addToCart(id) {
+//     const product = products.find(product => product.id === id);
+//     if (product) {
+//         const listItem = document.createElement("div");
+//         listItem.classList.add("list-item");
+//         listItem.innerHTML = `
+//             <div class="row align-items-center text-white-50">
+//                 <div class="col">
+//                     <img src="${product.image}" alt="product" class="img-fluid">
+//                 </div>
+//                 <div class="col">
+//                     <div class="title">${product.name}</div>
+//                 </div>
+//                 <div class="col">
+//                     <div class="price">${product.price}</div>
+//                 </div>
+//                 <div class="col">
+//                     <button class="btn btn-delete" onclick="removeCartItem(this)">
+//                         <i class="fas fa-trash-alt text-danger"></i>
+//                     </button>
+//                 </div>
+//             </div>
+//         `;
+//         const cartItems = document.querySelector(".shopping-cart-list");
+//         cartItems.appendChild(listItem);
+//         updateCartCount(); // Sepet sayısını güncelle
+//     }
+// }
+
+// function goToCart() {
+//     // Sepet sayfasına gitmek için gerekli işlemler
+// }
+// function updateCartCount() {
+//     const itemCount = document.querySelectorAll(".list-item").length;
+//     document.getElementById("item-count").textContent = itemCount;
+// }
+
+// function removeCartItem(button) {
+//     button.parentElement.parentElement.remove();
+//     updateCartCount(); // Sepet sayısını güncelle
+// }
+// document.addEventListener("DOMContentLoaded", () => {
+//     const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
+//     addToCartButtons.forEach(button => {
+//         button.addEventListener("click", function() {
+//             const productId = parseInt(this.dataset.productId);
+//             addToCart(productId);
+//         });
+//     });
+
+//     const cartIcon = document.querySelector(".cart-icon");
+//     cartIcon.addEventListener("click", goToCart);
+    
+//     const deleteButtons = document.querySelectorAll(".btn-delete");
+//     deleteButtons.forEach(button => {
+//         button.addEventListener("click", function() {
+//             removeCartItem(this);
+//         });
+//     });
+// });
+
+// const productContainer = document.querySelector(".product-details");
+
+// products.forEach(product => {
+//     const productCard = document.createElement("div");
+//     productCard.classList.add("product-card");
+//     productCard.innerHTML = `
+//         <img src="${product.image}" alt="Ürün Resmi">
+//         <div class="product-info">
+//             <h2>${product.name}</h2>
+//             <p>${product.description}</p>
+//             <p>Fiyat: ${product.price} TL</p>
+//             <button class="add-to-cart-btn" onclick="addToCart(${product.id})">Sepete Ekle</button>
+//         </div>
+//     `;
+//     productContainer.appendChild(productCard);
+// });
+// const cards = document.querySelectorAll(".product-card");
+// const addToCartButtons = document.querySelectorAll(".add-to-cart-btn");
+// const cartIcon = document.querySelector(".cart-icon");
+// const cartItems = document.querySelector(".shopping-cart-list");
+
+// class Shopping {
+//     constructor(title, price, image) {
+//         this.image = image;
+//         this.title = title;
+//         this.price = price;
+//     }
+// }
+
+// class UI {
+//     addToCart(shopping) {
+//         const listItem = document.createElement("div");
+//         listItem.classList.add("list-item");
+
+//         listItem.innerHTML = `
+//             <div class="row align-items-center text-white-50">
+//                 <div class="col">
+//                     <img src="${shopping.image}" alt="product" class="img-fluid">
+//                 </div>
+//                 <div class="col">
+//                     <div class="title">${shopping.title}</div>
+//                 </div>
+//                 <div class="col">
+//                     <div class="price">${shopping.price}</div>
+//                 </div>
+//                 <div class="col">
+//                     <button class="btn btn-delete">
+//                         <i class="fas fa-trash-alt text-danger"></i>
+//                     </button>
+//                 </div>
+//             </div>
+//         `;
+//         cartItems.appendChild(listItem);
+//     }
+
+//     removeCartItem() {
+//         const deleteButtons = document.querySelectorAll(".btn-delete");
+//         deleteButtons.forEach(button => {
+//             button.addEventListener("click", function() {
+//                 this.parentElement.parentElement.remove();
+//                 ui.updateCartCount();
+//             });
+//         });
+//     }
+    
+
+//     updateCartCount() {
+//         const itemCount = cartItems.querySelectorAll(".list-item").length;
+//         document.getElementById("item-count").textContent = itemCount;
+//     }
+
+//     toggleCart() {
+//         cartIcon.addEventListener("click", function() {
+//             cartItems.classList.toggle("d-none");
+//         });
+//     }
+// }
+
+// const ui = new UI();
+
+// addToCartButtons.forEach((button, index) => {
+//     button.addEventListener("click", function() {
+//         const title = cards[index].querySelector("h2").textContent;
+//         const price = cards[index].querySelector(".price").textContent;
+//         const image = cards[index].querySelector("img").src;
+//         button.classList.add("disabled");
+//         button.textContent = "In Cart";
+//         const shopping = new Shopping(title, price, image);
+//         ui.addToCart(shopping);
+//         ui.updateCartCount(); // Önce sepet sayısını güncelleyin
+//         ui.removeCartItem(); // Sonra sepeti güncelleyin
+//     });
+// });
+
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     ui.toggleCart();
+// });
+
+var navList = document.getElementById("navList");
+function show(){
+    navList.style.right = "0";
+}
+function hide(){
+    navList.style.right = "-200px";
+}
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anasayfa</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5571ab349c.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/5571ab349c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="header">
+        <div class="topbarbox">1000 TL ve üzeri ücretsiz kargo!</div>
+        <nav>
+            <a href="#" class="logo" ><img src="logo5.png" alt="logo"></a>
+            <div class="nav-links" id="navList">
+                <i class="fa-solid fa-xmark" onclick="hide()"></i>
+                <ul>
+                    <li><a href="#"  >ANASAYFA</a></li>
+                    <li><a href="hakkımızda.html" >HAKKIMIZDA</a></li>
+                    <li><a href="urunler.html"  >ÜRÜNLER</a></li>
+                    <li><a href="blog.html"  >BLOG</a></li>
+                    <li><a href="iletisim.html"  >İLETİŞİM</a></li>
+                    <li><div class="cart-icon" onclick="goToCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div></li>
+                </ul>
+
+            </div>
+            <i class="fa-solid fa-bars" onclick="show()"></i>
+        </nav>
+        <div class="text-box">
+            <h1>Dalından Sofranıza...</h1>
+        <p>Doğanın en güzel hediyelerinden biri olan zeytinlerimizi, özenle işleyerek sizlere sunuyoruz.</p>
+        <a href="" class="buton">Daha fazlası için bizi ziyaret edin.</a>
+
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2023 Tüm hakları saklıdır.</p>
+        <nav>
+          <a href="#">Anasayfa</a>
+          <a href="hakkımızda.html">Hakkımızda</a>
+          <a href="urunler.html">Ürünler</a>
+          <a href="blog.html">Blog</a>
+          <a href="iletisim.html">İletişim</a>
+        </nav>
+        <div class="social-icons">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </footer>
+
+      <!-- <script>
+        function goToCart() {
+            window.location.href = "sepet.html"; // Sepet sayfasına yönlendirme
+        }
+    </script> -->
+
+     <script>
+        var navList = document.getElementById("navList");
+        function show(){
+            navList.style.right = "0";
+        }
+        function hide(){
+            navList.style.right = "-200px";
+        }
+     </script>
+   
+    </body>
+</html>

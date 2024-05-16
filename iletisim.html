@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5571ab349c.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/5571ab349c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="header">
+        <div class="topbarbox">1000 TL ve üzeri ücretsiz kargo!</div>
+        <nav>
+            <a href="#" class="logo" ><img src="logo5.png" alt="logo"></a>
+            <div class="nav-links" id="navList">
+                <i class="fa-solid fa-xmark" onclick="hide()"></i>
+                <ul>
+                    <li><a href="index.html"  >ANASAYFA</a></li>
+                    <li><a href="hakkımızda.html"  >HAKKIMIZDA</a></li>
+                    <li><a href="urunler.html"  >ÜRÜNLER</a></li>
+                    <li><a href="blog.html"  >BLOG</a></li>
+                    <li><a href="iletisim.html"  >İLETİŞİM</a></li>
+                    <li><div class="cart-icon" onclick="goToCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div></li>
+                </ul>
+
+            </div>
+            <i class="fa-solid fa-bars" onclick="show()"></i>
+        </nav>
+
+        <main class="main">
+            <form action="#" method="post">
+              <label for="name">Ad Soyad:</label>
+              <input type="text" id="name" name="name" required>
+        
+              <label for="email">E-posta:</label>
+              <input type="email" id="email" name="email" required>
+        
+              <label for="message">Mesajınız:</label>
+              <textarea id="message" name="message" rows="4" required></textarea>
+        
+              <input type="submit" value="Gönder">
+            </form>
+          </main>
+          <div class="iltsm">
+
+          <a href=""><p>Telefon:0500 000 00 00</p></a>
+          <a href=""><p>e-posta:ornek@gmail.com</p></a>
+
+         </div>
+  
+        
+
+        <script>
+            var navList = document.getElementById("navList");
+            function show(){
+                navList.style.right = "0";
+            }
+            function hide(){
+                navList.style.right = "-200px";
+            }
+         </script>
+         
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5571ab349c.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/5571ab349c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="header">
+        <div class="topbarbox">1000 TL ve üzeri ücretsiz kargo!</div>
+        <nav>
+            <a href="#" class="logo" ><img src="logo5.png" alt="logo"></a>
+            <div class="nav-links" id="navList">
+                <i class="fa-solid fa-xmark" onclick="hide()"></i>
+                <ul>
+                    <li><a href="index.html" >ANASAYFA</a></li>
+                    <li><a href="hakkımızda.html"  >HAKKIMIZDA</a></li>
+                    <li><a href="urunler.html" >ÜRÜNLER</a></li>
+                    <li><a href="blog.html"  >BLOG</a></li>
+                    <li><a href="iletisim.html"  >İLETİŞİM</a></li>
+                    <li><div class="cart-icon" onclick="goToCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div></li>
+                </ul>
+
+            </div>
+            <i class="fa-solid fa-bars" onclick="show()"></i>
+        </nav>
+    <section class="hakkımızda">
+        <h1>HAKKIMIZDA</h1>
+        <br>
+        <p class="first">Çanakkale yöresinde kendi yetiştirdiğimiz zeytinlerimizden elde ettiğimiz yağ bakımından çok verimli, ve yağ kalitesi olarak dünyadaki  diğer emsallerinden üstün olan zeytinyağımızı sofralarınızın vazgeçilmezi olmaya aday. Bu amaç için zeytinyağı dünyasına bir tutkuyla başlamış bir aile işletmesiyiz. 2023 yılında temellerini atan şirketimiz, kaliteli zeytinyağlarını üretme misyonu ile yola çıktı. Doğadan gelen sağlıklı ve lezzetli bir ürün olan zeytinyağını, ailelerin sofralarına ulaştırmayı hedefliyoruz.</p>
+        <div class="satır">
+        <div class="hakkımızda-sutn">
+        <h3>MİSYONUMUZ</h3>
+        <br><br>
+        <p>Misyonumuz, en kaliteli zeytinyağlarını üreterek müşterilerimize sağlıklı ve lezzetli bir deneyim sunmaktır. Sürdürülebilir tarım yöntemlerini benimseyerek, doğayı ve çevreyi koruma sorumluluğumuzun bilincindeyiz. Amacımız, her damla zeytinyağının lezzetinde kaliteyi, sağlığı ve güveni hissettirmektir.</p>
+        </div>
+        <div class="hakkımızda-sutn">
+        <h3>İNSANA ve ÇEVREYE SAYGI</h3>
+        <p>İşimizi sadece bir zeytinyağı üreticisi olarak değil, aynı zamanda topluma ve çevreye olan sorumluluğumuzun bir ifadesi olarak görüyoruz. Adil ticaret ilkelerine bağlı kalarak, yerel toplulukları desteklemek ve çiftçilerle güçlü bir ortaklık kurmak, sosyal sorumluluğumuzun bir parçasıdır.</p>
+        </div>
+        <div class="hakkımızda-sutn">
+        <h3>İNOVASYON ve GELENEK</h3>
+        <p>Geleneksel zeytinyağı üretim yöntemlerine duyduğumuz derin saygı ile birlikte, sürekli yenilik ve gelişime de açığız. Geleneksel lezzetleri korurken, modern teknolojiyi kullanarak üretim süreçlerimizi iyileştirmeye ve müşterilerimize daha iyi bir deneyim sunmaya odaklanıyoruz.</p>
+        </div>
+        <div class="hakkımızda-sutn">
+        <h3>BİZE KATILIN</h3>
+        <p>Sizleri kalite ve sağlık dolu sofralarınıza lezzet katmaya davet ediyor. Zeytinyağı dünyasındaki yolculuğumuzda bize katılın, sağlıklı yaşamın ve lezzetin keyfini birlikte çıkaralım.</p>
+        </div>
+
+        </div>
+</section>
+
+
+<script>
+    var navList = document.getElementById("navList");
+    function show(){
+        navList.style.right = "0";
+    }
+    function hide(){
+        navList.style.right = "-200px";
+    }
+ </script>
+ 
+</body>
+</html>

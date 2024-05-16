@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/5571ab349c.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/5571ab349c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="header">
+        <div class="topbarbox">1000 TL ve üzeri ücretsiz kargo!</div>
+        <nav>
+            <a href="#" class="logo" ><img src="logo5.png" alt="logo"></a>
+            <div class="nav-links" id="navList">
+                <i class="fa-solid fa-xmark" onclick="hide()"></i>
+                <ul>
+                    <li><a href="index.html"  >ANASAYFA</a></li>
+                    <li><a href="hakkımızda.html"  >HAKKIMIZDA</a></li>
+                    <li><a href="urunler.html"  >ÜRÜNLER</a></li>
+                    <li><a href="blog.html"  >BLOG</a></li>
+                    <li><a href="iletisim.html"  >İLETİŞİM</a></li>
+                    <li><div class="cart-icon" onclick="goToCart()">
+                      <i class="fas fa-shopping-cart"></i>
+                  </div></li>
+                </ul>
+
+            </div>
+            <i class="fa-solid fa-bars" onclick="show()"></i>
+        </nav>
+    
+
+        <main>
+            <article>
+              <h2>Zeytinyağının Faydaları</h2>
+              <p class="date">12 Mart 2023</p>
+              <p>Mutfakların olmazsa olmazı olan zeytinyağının cilt hastalıklarından karaciğere kadar vücuda birçok faydası bulunuyor. Her gün yarım yemek kaşığı zeytinyağı tüketmenin faydasına inanamayacaksınız.
+
+                “Zeytinyağının faydaları nelerdir?” sorusunun yanıtı merak ediliyor. Zeytinyağının cilt hastalıklarından karaciğere kadar vücuda birçok faydası bulunuyor. Günlük hayatta mutfakta da çok tüketilen zeytinyağının faydaları merak ediliyor. Özellikle saçlara faydası ile bilinen zeytinyağının yararları saymakla bitmiyor. Araştırmacılar, her gün yarım yemek kaşığı zeytinyağı tüketenlerin herhangi bir kalp ve damar hastalığına yakalanma riskinin yüzde 15 daha düşük olduğunu tespit etti.</p>
+              <div class="fotograf">
+                <img src="zeytin1.jpeg" alt="">
+              </div>
+            </article>
+        
+            <article>
+             <h2>Zeytinyağı Çeşitleri</h2>
+              <p class="date">15 Mart 2023</p>
+              <p>
+                Taş Değirmen Zeytinyağı: Doğanın en saf armağanları olan zeytinler, taş değirmenlerde özenle işlenerek soğuk sıkım yöntemiyle elde edilir. <br>
+                Soğuk Sıkım Natürel Sızma Zeytinyağı: En taze zeytinlerimiz, soğuk sıkım yöntemiyle elde edilerek sizlerle buluşuyor. Besleyici ve lezzetli olan bu zeytinyağımız, sağlıklı yaşamın vazgeçilmez bir parçasıdır. <br>
+                Erken Hasat Soğuk Sıkım Zeytinyağı: Erken hasat edilen en taze zeytinlerimiz, soğuk sıkım yöntemiyle elde edilen bu zeytinyağımızda bir araya geliyor. Yüksek asit oranı ve zengin lezzetiyle sofralarınıza özel bir dokunuş yapar. <br>
+                Naturel Sızma Zeytinyağı: Doğal sızma yöntemiyle elde edilen bu zeytinyağımız, sofralarınıza doğallığı getirir. Sağlık dolu bir lezzet sunar.
+            
+    
+              </div>
+            </article>
+          </main>
+        
+
+          <script>
+            var navList = document.getElementById("navList");
+            function show(){
+                navList.style.right = "0";
+            }
+            function hide(){
+                navList.style.right = "-200px";
+            }
+         </script>
+                  
+</body>
+</html>
